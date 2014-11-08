@@ -1,5 +1,8 @@
 horsefeathers
 =============
+To Do List:
+(put completion date when item is finished)
 
-don't eat them
-modifications to the file
+implement local reset stylesheet
+fix scrolling on home page so that bottom item is not hidden below footer/navbar
+
