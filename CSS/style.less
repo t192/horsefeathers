@@ -1,0 +1,108 @@
+// variables
+
+// color
+@blue: rgba(119, 160, 178, 1.0);
+@red: rgba(200, 29, 0, 1.0);
+@gray: rgba(230, 230, 230, 1.0);
+@dk-gray: darken(@gray, 50%);
+@white: rgba(255, 255, 255, 1.0);
+@black: rgba(0, 0, 0, 1.0);
+
+// fonts
+
+@font-face{
+	font-family: 'display-font';
+	src: url('monte.eot');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@fancy: display-font;
+@displayFont: Arial, Helvetica, sans-serif;
+// cochin italic - bold and regular
+// seravek - light, med, italic
+
+@header: 30px;
+@subhead: 24px;
+@content: 14px;
+
+// z-index
+@zIndex1: 100;
+@zIndex2: 200;
+@zIndex3: 300;
+
+// mixins
+body{position: relative;}
+.fixed{
+	position: fixed;
+	display: block;
+	width: 100%;
+}
+.corners{
+	// border-top: 2px solid @gray;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.title{
+	width: 100%;
+	padding: 5px 0 10px 0;
+	text-align: center;
+	color: @red;
+	font-family: @fancy;
+	font-size: @header;
+	background-color: @blue;
+}
+.subtitle{
+	padding: 10px 0 10px 0;
+	text-align: center;
+	color: @dk-gray;
+	font-family: @displayFont;
+	font-size: @subhead;
+}
+.icon{
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	padding: 0 8px 5px 8px;
+}
+
+// css rules
+html{
+	background-color: @black;
+}
+.statusbar{
+	.fixed;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	background-color: @black;
+}
+.footer{
+	.fixed;
+	.corners;
+	bottom: 0;
+	left: 10;
+	height: 60px;
+	background-color: @blue;
+}
+.nav-icon{
+	.icon;
+}
+.wrapper{
+	margin-top: 20px;
+	background-color: @black;
+}
+.listItem{
+	background-color: @white;
+	border-top: 1px solid @dk-gray;
+	.corners;
+	.subtitle;
+}
+.header{
+	.title;
+	.corners;
+}
+.recepieContainer{
+	background-color: @white;
+	.corners;
+}
