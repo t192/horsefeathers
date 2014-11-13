@@ -1,6 +1,7 @@
 // variables
 
 // color
+// ===============================================================
 @blue: rgba(119, 160, 178, 1.0);
 @red: rgba(200, 29, 0, 1.0);
 @gray: rgba(230, 230, 230, 1.0);
@@ -9,16 +10,16 @@
 @black: rgba(0, 0, 0, 1.0);
 
 // fonts
-
-@font-face{
-	font-family: 'display-font';
-	src: url('monte.eot');
-	font-weight: normal;
-	font-style: normal;
+// ===============================================================
+@font-face {
+	font-family: 'cochin';
+	src: url('../fonts/cochin.ttf');
+	font-style: italic;
 }
-
-@fancy: display-font;
-@displayFont: Arial, Helvetica, sans-serif;
+.decorative {
+	font-family: 'cochin';
+	font-style: italic;
+}
 // cochin italic - bold and regular
 // seravek - light, med, italic
 
@@ -32,7 +33,7 @@
 @zIndex3: 300;
 
 // mixins
-body{position: relative;}
+// ===============================================================
 .fixed{
 	position: fixed;
 	display: block;
@@ -44,37 +45,61 @@ body{position: relative;}
 }
 .title{
 	width: 100%;
-	padding: 5px 0 10px 0;
+	margin: 5px 0 15px 0;
 	text-align: center;
 	color: @red;
-	font-family: @fancy;
+	.decorative;
 	font-size: @header;
-	background-color: @blue;
+	display: block;
 }
 .subtitle{
 	padding: 10px 0 10px 0;
 	text-align: center;
 	color: @dk-gray;
-	font-family: @displayFont;
 	font-size: @subhead;
 }
 .icon{
 	height: 60px;
 	width: 60px;
 	display: inline-block;
-	padding: 0 8px 5px 8px;
+	// padding: 0 8px 5px 8px;
+	padding-bottom: 3%;
+}
+.clearfix{
+	margin: 0;
+	float: none;
+	clear: both;
 }
 
 // css rules
+// ===================================================================
+// navigation and overall
 html{
 	background-color: @black;
+}
+body{
+	position: relative;
+	// so that + buttons can be absolutely positioned
+}
+.wrapper{
+	margin-top: 20px;
+	background-color: @white;
 }
 .statusbar{
 	.fixed;
 	top: 0px;
 	left: 0px;
-	height: 20px;
+	height: 50px;
 	background-color: @black;
+}
+.header{
+	background-color: @blue;
+	.fixed;
+	top: 16px;
+	left:0px;
+	.title;
+	.corners;
+	padding: 1px 0 5px 0;
 }
 .footer{
 	.fixed;
@@ -84,12 +109,15 @@ html{
 	height: 60px;
 	background-color: @blue;
 }
+.recepieContainer{
+	width: 100%;
+	background-color: @red;
+	.corners;
+}
+
+// smaller elements ==========================================
 .nav-icon{
 	.icon;
-}
-.wrapper{
-	margin-top: 20px;
-	background-color: @black;
 }
 .listItem{
 	background-color: @white;
@@ -97,14 +125,57 @@ html{
 	.corners;
 	.subtitle;
 }
-.header{
-	.title;
-	.corners;
+.headerHider{
+	// so nothing gets hidden under the header
+	min-height: 42px;
 }
-.recepieContainer{
-	background-color: @white;
-	.corners;
+.footerHider{
+	// so that nothing gets hidden underneath footer! this div stays empty.
+	min-height: 60px;
 }
-.lastListItem{
-	min-height: 30px;
+.btnAddItem{
+	margin: 0 auto;
+	padding: 5px;
+	height: 40px;
+	width: 40px;
+	display: block;
+}
+
+// Form Styling
+// =================================================
+// for line height = height of input boxes:
+input{
+	margin: 1% 0 1% 0;
+}
+.fTall{
+	line-height: 1.5em;
+	font-size: 1.5em;
+	text-align: center;
+}
+.fMed{
+	line-height: 1.3em;
+	font-size: 1em;
+}
+.fShort{
+	line-height: 1.2em;
+	font-size: 0.8em;
+}
+// for width:
+.fFull{
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 5px;
+	display: block;
+}
+.fLeft{
+	width: 30%;
+	display: inline-block;
+	float: left;
+	margin-left: 4%;
+}
+.fRight{
+	width: 60%;
+	display: inline-block;
+	float: right;
+	margin-right: 4%;
 }
