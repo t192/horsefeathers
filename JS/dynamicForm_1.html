@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Jquery for Dynamic Forms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            var ingrCounter = 0;
+            var stepCounter = 0;
+            var ingrID;//ID of last created ingredient element in form
+            var stepID;//ID of last created step element in form
+            $(document).ready(function () {
+
+                ingrID = document.forms[ingrCounter];//gets id of last created ingredient element in form
+
+                $("#bttn1").click(function () {//Add ingredients and qty
+                    ingrCounter++;
+                    //creates 2 new input boxes for qty and ingredients in form
+                    $(ingrID).append('<input type="text" name="qty' + ingrCounter + '" value="Qty ' + (ingrCounter + 1) + '" id="qty' + ingrCounter + '">');
+                    $(ingrID).append('<input type="text" name="ingr' + ingrCounter + '" value="Ingredient ' + (ingrCounter + 1) + '" id="ingr' + ingrCounter + '">');
+                });
+
+                stepID = document.forms[ingrCounter];
+
+                $("#bttn2").click(function () {//Add Steps to recipe
+                    stepCounter++;
+                    //creates new input box for steps in form
+                    $(stepID).append('<input type="text" name="step' + stepCounter + '" value="Step ' + (stepCounter + 1) + '" id="step' + stepCounter + '">');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="div1" style="width:25%;">
+            <form id="data">
+                <input type="text" name="qty" value="Qty 1" class="qtyBox" id="qty">
+                <input type="text" name="ingr" value="Ingredient 1" class="ingrBox" id="ingr">
+                <input type="text" name="step" value="Step 1" class="stepBox" id="step">
+            </form>
+        </div>
+        <button id="bttn1" >Add Ingredient</button>
+        <button id="bttn2" >Add Step</button>
+    </body>
+</html>
