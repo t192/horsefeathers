@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 <body>
-  <!--#include virtual="headercontent.html" -->
 	<div class="statusbar"></div>
 	<div class="wrapper">
     <div class="recipieContent">
@@ -17,26 +16,23 @@
     <div class="recipieContainer">
       <div class="headerHider"></div>
     	<form>
+        <!-- recipie name input box-->
 	    	<input class="fTall fFull" type="text" placeholder="RECIPIE NAME" >
+        <!-- # servings input box-->
 	    	<input class="fShort fLeft" type="number" placeholder="# servings">
 	    	<div class="clearfix"></div>
 	    	<label class="title">Ingredients</label>
 	    	<div class="clearfix"></div>
+        <!-- quantity input box-->
 	    	<input class="fMed fLeft" type="text" placeholder="qty">
+        <!-- ingredient input box -->
 	    	<input class="fMed fRight" type="text" placeholder="ingredient">
-	    	<input class="fMed fLeft" type="text" placeholder="qty">
-	    	<input class="fMed fRight" type="textarea" placeholder="ingredient">
+	    	<!-- button to add another set of qty and ingredient inputs -->
 	    	<img class="btnAddItem" onclick="" src="img/icon_plus.jpg">
 
-	    	<!-- <div onclick="">
-	    		<img class="btnAddItem" src="img/icon_plus.jpg">
-  			</div> -->
-  			<label class="title">Ingredients</label>
+  			<label class="title">Instructions</label>
   			<div class="clearfix"></div>
-  			<input class="fMed fLeft" type="text" placeholder="qty">
-  			<input class="fMed fRight" type="text" placeholder="ingredient">
-  			<input class="fMed fLeft" type="text" placeholder="qty">
-  			<input class="fMed fRight" type="textarea" placeholder="ingredient">
+  			<input class="fMed fFull" type="text" placeholder="Instructions">
   			<img class="btnAddItem" onclick="" src="img/icon_plus.jpg">
 		  </form>	
       <div class="footerHider"></div>
