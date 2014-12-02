@@ -4,22 +4,36 @@ var ingrID;//ID of last created ingredient element in form
 var stepID;//ID of last created step element in form
 $(document).ready(function () {
 
-  // ingrID = document.('#formIngr');
-  ingrID = document.forms[ingrCounter];//gets id of last created ingredient element in form
-  // ingrID = document.("#formIngr")[ingrCounter];
+    // ingrID = document.('#formIngr');
+    ingrID = document.forms[ingrCounter];//gets id of last created ingredient element in form
+    // ingrID = document.("#formIngr")[ingrCounter];
 
-  $("#btnAddIngredient").click(function () {//Add ingredients and qty
-      ingrCounter++;
-      //creates 2 new input boxes for qty and ingredients in form
-      $('#formIngr').append('<input class="fMed fLeft" type="text" name="qty' + ingrCounter + '" placeholder="Qty ' + (ingrCounter + 1) + '" id="qty' + ingrCounter + '">');
-      $('#formIngr').append('<input class="fMed fRight" type="text" name="ingr' + ingrCounter + '" placeholder="Ingredient ' + (ingrCounter + 1) + '" id="ingr' + ingrCounter + '">');
-  });
+    $("#btnAddIngredient").click(function () {//Add ingredients and qty
+        ingrCounter++;
+        //creates 2 new input boxes for qty and ingredients in form
+        $('#formIngr').append('<input class="fMed fLeft" type="text" name="qty' + ingrCounter + '" placeholder="Qty ' + (ingrCounter + 1) + '" id="qty' + ingrCounter + '">');
+        $('#formIngr').append('<input class="fMed fRight" type="text" name="ingr' + ingrCounter + '" placeholder="Ingredient ' + (ingrCounter + 1) + '" id="ingr' + ingrCounter + '">');
+    });
 
-  stepID = document.forms[ingrCounter];
+    stepID = document.forms[ingrCounter];
 
-  $("#btnAddInstruction").click(function () {//Add Steps to recipe
-      stepCounter++;
-      //creates new input box for steps in form
-      $('#formStep').append('<input class="fMed fFull" type="text" name="step' + stepCounter + '" placeholder="Step ' + (stepCounter + 1) + '" id="step' + stepCounter + '">');
-  });
+    $("#btnAddInstruction").click(function () {//Add Steps to recipe
+        stepCounter++;
+        //creates new input box for steps in form
+        $('#formStep').append('<input class="fMed fFull" type="text" name="step' + stepCounter + '" placeholder="Step ' + (stepCounter + 1) + '" id="step' + stepCounter + '">');
+    });
 });
+
+function storeRecipe()
+{
+    
+    if (typeof (Storage) != "undefined") {
+        // Store
+        localStorage.recipe = GET;
+        // Retrieve
+        document.getElementById("result").innerHTML = localStorage.recipe;
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+}
+
