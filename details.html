@@ -7,41 +7,84 @@
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 <body>
-  <!--#include virtual="headercontent.html" -->
 	<div class="statusbar"></div>
 	<div class="wrapper">
-    <div class="recipieContent">
+    <div class="recipeContent">
       <div class="header">
-          <span class="headerNavL">Back</span>
-          <span class="headerNavR">Edit</span>
+          <span class="headerNavL"><a href="home.html" class="unstyleLink">Back</a></span>
+          <!-- <span class="headerNavR">Edit</span> -->
           <div class="clearfix"></div>
         <!-- <div class="addIcon"> -->
           <!-- <img class="btnAddItem" src="/img/icon_plus.jpg"> -->
         <!-- </div> -->
       </div>
-      <div class="recipieContainer">
+      <div class="recipeContainer">
         <div class="headerHider"></div>
-        <!-- the following div is what we want to dynamically create for each recipie which exists in the database/local storage -->
-        <div id="secret" class="listItem">Dnyamically put name here.</div>
-        <div id="secret" class="footerHider"></div>
-      </div> 
-      
+        <div class="recipeTitle">Get Recipe Name</div>
+        <div class="recipeServes">Serves 4-6</div>
+        <div class="title">Ingredients</div>
+<!-- begin ingredient container -->
+        <div class="ingrContainer">
+          <div class="ingrPair">
+            <div class="ingrL">1 Cup</div>
+            <div class="ingrR">Chopped Thyme Root Syrum</div>
+          </div>
 
+          <div class="clearfix"></div>
+
+          <div class="ingrPair">
+            <div class="ingrL">7 TBSP.</div>
+            <div class="ingrR">Happy Short</div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="ingrPair">
+            <div class="ingrL">2 tsp</div>
+            <div class="ingrR">talcum powder</div>
+          </div>
+        </div>
+     <!-- end ingredient container -->
+        <div class="clearfix"></div>
+        <div class="title">Instructions</div>
+        <div class="instrContainer">
+          <div class="instrPair">
+            <div class="instrL">1.</div>
+            <div class="instrR">Do this and that</div>
+          </div>
+          <div class="instrPair">
+            <div class="instrL">2.</div>
+            <div class="instrR">Do another step that might be really long and unpleasant with the cooking stuff.</div>
+          </div>
+          <div class="instrPair">
+            <div class="instrL">2.</div>
+            <div class="instrR">Do another step that might be really long and unpleasant with the cooking stuff.</div>
+          </div>
+          <div class="clearfix"></div>  
+        </div>
+      </div>
     </div>
+    <div class="footerHider"></div>
     <div class="footer">
-      <a href="home.html">
-        <img class="nav-icon" src="img/recipie_app_icon1.png">
-      </a>
-      <a href="list.html">
-        <img class="nav-icon" src="img/recipie_app_icon2.png">
-      </a>
-      <a href="favorites.html">
-        <img class="nav-icon" src="img/recipie_app_icon3.png">
-      </a>
-      <a href="newitem.html">
-        <img class="nav-icon" src="img/recipie_app_icon4.png">
-      </a>
-    </div>
+      <div class="iconBar">
+          <a href="home.html" class="navIcon">
+            <img class="nav-icon" src="img/recipe_app_icon1.png">
+          </a>
+        <div class="navIcon">
+          <a href="newitem.html">
+            <img class="nav-icon" src="img/recipe_app_icon2.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="details.html">
+            <img class="nav-icon" src="img/recipe_app_icon3.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="home.html">
+            <img class="nav-icon" src="img/recipe_app_icon4.png">
+          </a>
+        </div>
+      </div> <!-- iconbar div end -->
+    </div> <!-- end footer div -->
 	</div>
 </body>
 </html

@@ -10,16 +10,16 @@
   <!--#include virtual="headercontent.html" -->
 	<div class="statusbar"></div>
 	<div class="wrapper">
-    <div class="recipieContent">
+    <div class="recipeContent">
       <div class="header">
-        <span>Recipies</span>
+        <span>Recipes</span>
         <div class="addIcon">
           <!-- <img class="btnAddItem" src="/img/icon_plus.jpg"> -->
         </div>
       </div>
-      <div class="recipieContainer">
+      <div class="recipeContainer">
         <div class="headerHider"></div>
-        <!-- the following div is what we want to dynamically create for each recipie which exists in the database/local storage -->
+        <!-- the following div is what we want to dynamically create for each recipe which exists in the database/local storage -->
         <div id="secret" class="listItem">Dnyamically put name here.</div>
         <div id="secret" class="footerHider"></div>
       </div> 
@@ -27,19 +27,29 @@
 
     </div>
     <div class="footer">
-      <a href="home.html">
-        <img class="nav-icon" src="img/recipie_app_icon1.png">
-      </a>
-      <a href="details.html">
-        <img class="nav-icon" src="img/recipie_app_icon2.png">
-      </a>
-      <a href="favorites.html">
-        <img class="nav-icon" src="img/recipie_app_icon3.png">
-      </a>
-      <a href="newitem.html">
-        <img class="nav-icon" src="img/recipie_app_icon4.png">
-      </a>
-    </div>
+      <div class="iconBar">
+        <div class="navIcon">
+          <a href="home.html">
+            <img class="nav-icon" src="img/recipe_app_icon1.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="newitem.html">
+            <img class="nav-icon" src="img/recipe_app_icon2.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="details.html">
+            <img class="nav-icon" src="img/recipe_app_icon3.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="home.html">
+            <img class="nav-icon" src="img/recipe_app_icon4.png">
+          </a>
+        </div>
+      </div> <!-- iconbar div end -->
+    </div> <!-- end footer div -->
 	</div>
 </body>
 </html

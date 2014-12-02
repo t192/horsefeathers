@@ -6,21 +6,21 @@
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.0/build/cssreset/cssreset-min.css">
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="JS/addRecipie.js"></script>
+  <script src="JS/addRecipe.js"></script>
 </head>
 <body>
 	<div class="statusbar"></div>
 	<div class="wrapper">
-    <div class="recipieContent">
+    <div class="recipeContent">
       <div class="header">
-        <span>recipies</span>
+        <span>Add New Recipe</span>
     </div>
-    <div class="recipieContainer">
+    <div class="recipeContainer">
       <div class="headerHider"></div>
     	<form>
        <span id="formIngr">
-        <!-- recipie name input box-->
-	    	<input class="fTall fFull" type="text" placeholder="RECIPIE NAME" >
+        <!-- recipe name input box-->
+	    	<input class="fTall fFull" type="text" placeholder="RECIPE NAME" >
         <!-- # servings input box-->
 	    	<input class="fShort fLeft" type="number" placeholder="# servings">
 	    	<div class="clearfix"></div>
@@ -50,21 +50,29 @@
 
     </div>
     <div class="footer">
-      <div class="footerLinkWrap">
-        <a class="footerLink" href="home.html">
-          <img class="nav-icon" src="img/recipie_app_icon1.png">
-        </a>
-        <a class="footerLink" href="list.html">
-          <img class="nav-icon" src="img/recipie_app_icon2.png">
-        </a>
-        <a class="footerLink" href="favorites.html">
-          <img class="nav-icon" src="img/recipie_app_icon3.png">
-        </a>
-        <a class="footerLink" href="newitem.html">
-          <img class="nav-icon" src="img/recipie_app_icon4.png">
-        </a>
-      </div>
-    </div>
+      <div class="iconBar">
+        <div class="navIcon">
+          <a href="home.html">
+            <img class="nav-icon" src="img/recipe_app_icon1.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="newitem.html">
+            <img class="nav-icon" src="img/recipe_app_icon2.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="details.html">
+            <img class="nav-icon" src="img/recipe_app_icon3.png">
+          </a>
+        </div>
+        <div class="navIcon">
+          <a href="home.html">
+            <img class="nav-icon" src="img/recipe_app_icon4.png">
+          </a>
+        </div>
+      </div> <!-- iconbar div end -->
+    </div> <!-- end footer div -->
 	</div>
 </body>
 </html
