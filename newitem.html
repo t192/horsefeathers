@@ -17,7 +17,7 @@
     </div>
     <div class="recipeContainer">
       <div class="headerHider"></div>
-    	<form>
+      <form onsubmit="storeRecipe()" id="recipeForm" method="GET">
        <span id="formIngr">
         <!-- recipe name input box-->
 	    	<input class="fTall fFull" type="text" placeholder="RECIPE NAME" >
@@ -74,5 +74,6 @@
       </div> <!-- iconbar div end -->
     </div> <!-- end footer div -->
 	</div>
+        <div id="result"></div>
 </body>
-</html
+</html>
