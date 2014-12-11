@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="CSS/style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="JS/addRecipe.js"></script>
+  <script src="JS/db.js"></script>
 </head>
 <body>
 	<div class="statusbar"></div>
@@ -44,6 +45,13 @@
 
       <!-- button to add another set of qty and ingredient inputs -->
       <img class="btnAddItem" id="btnAddInstruction" src="img/icon_plus.jpg">
+      <div class="clearfix"></div>
+
+      <div class="btnContainer">
+        <a href="#" class="btnSubmit">Submit</a>
+        <!-- <span class="btnSubmit">Submit</span> -->
+      </div>
+      
       <div class="footerHider"></div>
     </div>
       
@@ -53,7 +61,7 @@
       <div class="iconBar">
         <div class="navIcon">
           <a href="home.html">
-            <img class="nav-icon" src="img/recipe_app_icon1.png">
+            <img id="listPage" class="nav-icon" src="img/recipe_app_icon1.png">
           </a>
         </div>
         <div class="navIcon">

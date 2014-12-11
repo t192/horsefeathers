@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.coolappz.aIndexDB_test2.aIndexDB_test2 { <init>(...); }
+
