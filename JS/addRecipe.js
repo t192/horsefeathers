@@ -1,6 +1,7 @@
 //----------------Start of Storage-----------------------------------
 // variable which will hold the database connection
 var db;
+initializeDB();  
 function initializeDB() {
     if (window.indexedDB) {
         console.log("IndexedDB support is there");
@@ -43,7 +44,7 @@ var stepCounter = 0;
 var ingrID;//ID of last created ingredient element in form
 var stepID;//ID of last created step element in form
 $(document).ready(function () {
-
+    
     // ingrID = document.('#formIngr');
     ingrID = document.forms[ingrCounter];//gets id of last created ingredient element in form
     // ingrID = document.("#formIngr")[ingrCounter];
@@ -63,24 +64,60 @@ $(document).ready(function () {
         $('#formStep').append('<input class="fMed fFull" type="text" name="step' + stepCounter + '" placeholder="Step ' + (stepCounter + 1) + '" id="step' + stepCounter + '">');
     });
 
-    var boxes = ingrCounter + stepCounter;
-
+//---------------viewing recipe--------------------------------
+    $("#listPage").click(function () {
+    
+    //Read the notes
+        var transaction = db.transaction(['recipes']);
+        var store = transaction.objectStore('recipes');
+    // open a cursor to retrieve all items from the 'notes' store
+    
+        store.openCursor().onsuccess = function (e) {
+            var cursor = e.target.result;
+            if (cursor) {
+                var value = cursor.value;
+                
+                var h3NoteTitle = $("<h3/>").text(value.title);
+                //var pNoteDetails = $("<p/>").text(value.details);
+                //$("#secret").append(h3NoteTitle);
+// move to the next item in the cursor
+                cursor.continue();
+            }
+            $('div[data-role=collapsible]').collapsible({refresh: true});
+        };
+    });
+    
+    
+ //----------------------------Adding recipes--------------------------
     //Click Handlers for Add Notes page
-    $("#bttnSaveRecipe").click(function () {
+    $("#bttnSave").click(function () {
         recipeTitle = $("#recipeName").val();
-        //noteDetails = $("#noteDetails").val();
+        servingsBox = $("#servings").val();
+        for( var i=1; i <= ingrCounter; i++)
+            {
+                var qtyCount = qtyBox + i;
+                var ingrCount = ingrBox +i;
+                qtyCount = $("#qty").val();
+                ingrCount = $("#ingr").val();
+            }
+            for( var i=1; i <= stepCounter; i++)
+            {
+                var stepCount = stepBox + i;
+                stepCount = $("#step").val();
+            }
+            
     // create the transaction with 1st parameter is the list of stores and the second specifies
     // a flag for the readwrite option
         var transaction = db.transaction(['recipes'], 'readwrite');
     //Create the Object to be saved i.e. our Note
         var value = {};
         value.title = recipeTitle;
-        value.details = noteDetails;
+        value.servings = servingsBox;
     // add the note to the store
         var store = transaction.objectStore('recipes');
         var request = store.add(value);
         request.onsuccess = function (e) {
-            alert("Your note has been saved");
+            alert("Your note has been saved"+recipeTitle);
         };
         request.onerror = function (e) {
             alert("Error in saving the note. Reason : " + e.value);
