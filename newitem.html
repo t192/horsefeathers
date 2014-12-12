@@ -18,19 +18,19 @@
     </div>
     <div class="recipeContainer">
       <div class="headerHider"></div>
-      <form onsubmit="storeRecipe()" id="recipeForm" method="GET">
+      <form id="recipeForm" method="GET">
        <span id="formIngr">
         <!-- recipe name input box-->
-	    	<input class="fTall fFull" type="text" placeholder="RECIPE NAME" >
+	    	<input class="fTall fFull" type="text" placeholder="RECIPE NAME" id="recipeName">
         <!-- # servings input box-->
-	    	<input class="fShort fLeft" type="number" placeholder="# servings">
+	    	<input class="fShort fLeft" type="number" placeholder="# servings" id="servings">
 	    	<div class="clearfix"></div>
 	    	<label class="title">Ingredients</label>
 	    	<div class="clearfix"></div>
         <!-- quantity input box-->
-	    	<input class="fMed fLeft" type="text" placeholder="Qty 1">
+	    	<input class="fMed fLeft" type="text" placeholder="Qty 1" id="qty">
         <!-- ingredient input box -->
-	    	<input class="fMed fRight" type="text" placeholder="Ingredient 1">
+	    	<input class="fMed fRight" type="text" placeholder="Ingredient 1" id="ingr">
       </span> 
       <!-- button to add another set of qty and ingredient inputs -->
     	<img id="btnAddIngredient" class="btnAddItem" src="img/icon_plus.jpg">
@@ -38,7 +38,7 @@
       <span id="formStep">
         <label class="title">Step 1</label>
         <div class="clearfix"></div>
-        <input class="fMed fFull" type="text" placeholder="Instructions">
+        <input class="fMed fFull" type="text" placeholder="Instructions" id="step">
       </span>
   			
 		  </form>	
@@ -48,7 +48,7 @@
       <div class="clearfix"></div>
 
       <div class="btnContainer">
-        <a href="#" class="btnSubmit">Submit</a>
+         <input type="submit" id="bttnSave">
         <!-- <span class="btnSubmit">Submit</span> -->
       </div>
       
